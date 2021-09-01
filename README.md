@@ -10,7 +10,7 @@ Filter based on min/max salary and sort by name/login/salary/id
          2. Change Connection.properties to local database
 ## Rest endpoints: 
                 "/users" required params: 1. minSalary 2. maxSalary 3. offset 4. limit 5. sort
-                "/users/upload" uploasd data in sample/csv file to database
+                "/users/upload" uploads data in sample/csv file to database
                          
 # Interpretation
 1. Upload of file by pointing to path in backend.
