@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private SERVER = "http://localhost:8080/users?minSalary=0&maxSalary=8000&offset=0&limit=30&sort=+fname"
+  private SERVER = "http://localhost:8080/users?minSalary=0&maxSalary=5000&offset=0&limit=30&sort=+fname"
   constructor(private httpClient: HttpClient) { }
   
   getAllUsers():Observable<any>{

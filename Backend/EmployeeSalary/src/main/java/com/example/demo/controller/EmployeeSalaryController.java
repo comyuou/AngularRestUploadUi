@@ -20,27 +20,25 @@ import com.example.demo.vo.Employee;
 public class EmployeeSalaryController {
 	@Autowired
 	EmployeeService empService;
-	/*@GetMapping("/employees")
+	@GetMapping("/user")
 	public List<Employee> getEmployee() {
-		
-		return empService.getLst();
-	}*/
-	@GetMapping("/employees/{id}")
+		return empService.getEmployees();
+	}
+	/*@GetMapping("/users/{id}")
 	public Employee getEmployee1(@PathVariable("id") String id) {
 		return empService.getLst()
 				.stream()
 				.filter(p->p.getId().equals(id))
 				.collect(Collectors.toList()).get(0);
 		
-	}
-	@PostMapping("/employee")
-	public void addPerson(@RequestBody Employee emp) {
+	}*/
+	@PostMapping("/user")
+	public void addEmployee(@RequestBody Employee emp) {
 		empService.getLst().add(emp);
 	}
 	
-	@PostMapping("/employees/upload")
+	@PostMapping("/users/upload")
 	public void insertDetails(){
-		System.out.println("IN CONTROLLER");
 		empService.insertDetails();
 	}
 	

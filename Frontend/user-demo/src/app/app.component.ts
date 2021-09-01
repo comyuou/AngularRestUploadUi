@@ -18,12 +18,16 @@ export class AppComponent {
   constructor(private userService:UserService){
     this.userService.getAllUsers().subscribe((v)=>{
       this.dataSource=v;
-      this.dataSource.paginator = this.paginator;
     });
   }
   ngOnInit() {
   }
   public users:any=[];
+  
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
   }
 
 

@@ -41,11 +41,10 @@ public class EmployeeService {
 
 	
 	public List<Employee> getEmployees() {
-		System.out.println("IN GETEMPLOYEES");
 		List<Employee> lst = new ArrayList<Employee>();
 		try {
 			Stream<String> stream = 
-					getStreams("D:\\EclipseNew\\EmployeeSalary\\src\\main\\resources\\sample.txt");
+					getStreams("D:\\EclipseNew\\AngularRestUploadUi\\Backend\\EmployeeSalary\\src\\main\\resources\\sample.txt");
 			lst=stream.map((str)->{
 				String values[]=str.split(",");
 				return new Employee(values[0],values[1],values[2],Double.parseDouble(values[3]));			
@@ -58,7 +57,6 @@ public class EmployeeService {
 	}
 	public List<Employee> getEmployees(double minSalary,double maxSalary, int offset, int limit, String sort) {
 		List<Employee> lst = new ArrayList<Employee>();
-		System.out.println(sort);
 		String sortType=sort.charAt(0)+"";
 		String columnName=sort.substring(1);
 		lst= employeeDAO.getEmployee(minSalary, maxSalary,columnName,sortType);	
@@ -66,7 +64,6 @@ public class EmployeeService {
 		return lst;
 	}
 	public void insertDetails() {
-		System.out.println("IN SERVICE INSERT DETAILS");
 		employeeDAO.insertDetails(getEmployees());
 	}
 }
