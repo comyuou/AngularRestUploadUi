@@ -8,6 +8,7 @@ Filter based on min/max salary and sort by name/login/salary/id
 ## Backend: 
          1. Change filePath in EmployeeService class to point to csv/text file.
          2. Change Connection.properties to local database
+         3. Start up Application
 ## Rest endpoints: 
                 "/users" required params: 1. minSalary 2. maxSalary 3. offset 4. limit 5. sort
                 "/users/upload" uploads data in sample/csv file to database
